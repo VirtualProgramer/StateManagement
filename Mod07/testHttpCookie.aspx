@@ -19,7 +19,11 @@
     {
         HttpCookie hc = Request.Cookies["aa"];
 
-        Label1.Text = hc.Values["1"] + "-" + hc.Values["2"];
+        foreach (string key in hc.Values.Keys)
+        {
+            Label1.Text += key + "-" + hc.Values[key] + "<br/>";
+        }
+        //Label1.Text = hc.Values["1"] + "-" + hc.Values["2"];
     }
 </script>
 
